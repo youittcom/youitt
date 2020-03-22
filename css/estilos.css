@@ -1,6 +1,9 @@
 body{
     background-color: cadetblue;
 }
+#borde{
+
+}
 #logo{
     border: 1px solid #000000;
 }
