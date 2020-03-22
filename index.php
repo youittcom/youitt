@@ -1,6 +1,7 @@
 <?php
 if(isset($_GET['controlador']) && $_GET['controlador'] != ''){
-    if($_GET['controlador'] == 'hola'){
+    $controlador = $_GET['controlador'].'Controller';
+    if(class_exists($controlador)){
         echo "ok";
     }
 }
