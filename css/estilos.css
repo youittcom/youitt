@@ -1,0 +1,10 @@
+body{
+    background-color: cadetblue;
+}
+#logo{
+    border: 1px solid #000000;
+}
+#imglogo{
+    width: 199px;
+    border-radius: 60px;
+}
