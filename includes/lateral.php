@@ -21,8 +21,10 @@ require_once 'includes/helpers.php';
             <?php echo mostrarError($_SESSION['errores'],'nombre'); ?>
             <label>Apellidos</label>
             <input type="text" name="apellidos"/>
+            <?php echo mostrarError($_SESSION['errores'],'apellidos'); ?>
             <label>Email</label>
             <input type="email" name="email"/>
+            <?php echo mostrarError($_SESSION['errores'],'email'); ?>
             <label>Password</label>
             <input type="password" name="password"/>
 
