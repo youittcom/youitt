@@ -1,6 +1,7 @@
 <?php
-session_start();
 if(isset($_POST)){
+    require_once 'includes/conexion.php';
+    session_start();
     $nombre = isset($_POST['nombre'])?$_POST['nombre']:false;
     $apellidos = isset($_POST['apellidos'])?$_POST['apellidos']:false;;
     $email = isset($_POST['email'])?$_POST['email']:false;;
@@ -32,14 +33,22 @@ if(isset($_POST)){
     $guardar_usuario = false;
     if(count($errores) == 0){
         $guardar_usuario = true;
+        //ciframos la password
+        $password = password_hash($password,PASSWORD_BCRYPT,['cost' => 4]);
+        //insert en la base de datos
+        $sql = "INSERT INTO usuarios VALUES (null,'$nombre','$apellidos','$email','$password')";
+        $guardar = mysqli_query($db,$sql);
+        if($guardar) {
+            $_SESSION['completado'] = "registro completado";
+        }else{
+            $_SESSION['errores']['general']="fallo al guardar usuario";
+        }
     }
     else{
         $_SESSION['errores'] = $errores;
-        header('Location:index.php');
+
     }
-    //var_dump($_POST);
+
 }
-else{
-    echo "no hay datos en el formulario";
-}
+header('Location:index.php');
 
