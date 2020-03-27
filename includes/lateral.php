@@ -15,7 +15,16 @@ require_once 'includes/helpers.php';
     </div>
     <div id="registro" class="bloque">
         <h3>Registro</h3>
-        <form action="registro.php" method="post">
+        <?php if(isset($_SESSION['completado'])):?>
+            <div>
+                <?php echo $_SESSION['completado']?>
+            </div>
+        <?php elseif(isset($_SESSION['errores']['general'])):?>
+            <div>
+                <?php echo $_SESSION['errores']['general'];?>
+            </div>
+        <?php endif;?>
+        <form action="../registro.php" method="post">
             <label>Nombre</label>
             <input type="text" name="nombre"/>
             <?php echo mostrarError($_SESSION['errores'],'nombre'); ?>
@@ -30,6 +39,7 @@ require_once 'includes/helpers.php';
 
             <input type="submit" value="Registro" name="submit">
         </form>
+
         <?php borrarError() ?>
     </div>
 </aside>
