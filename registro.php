@@ -35,13 +35,19 @@ if(isset($_POST)){
         $guardar_usuario = true;
         //ciframos la password
         $password = password_hash($password,PASSWORD_BCRYPT,['cost' => 4]);
-        //insert en la base de datos
-        $sql = "INSERT INTO usuarios VALUES (null,'$nombre','$apellidos','$email','$password')";
-        $guardar = mysqli_query($db,$sql);
-        if($guardar) {
-            $_SESSION['completado'] = "registro completado";
+        //buscamos si ya esta registrado
+        $registrado = buscarUsuarioPorEmail($email,$db);
+        if($registrado){
+            $_SESSION['errores']['registrado']="Ya existe un usuario registrado con este email";
         }else{
-            $_SESSION['errores']['general']="fallo al guardar usuario";
+            //insert en la base de datos
+            $sql = "INSERT INTO usuarios VALUES (null,'$nombre','$apellidos','$email','$password',CURRENT_TIMESTAMP())";
+            $guardar = mysqli_query($db,$sql);
+            if($guardar) {
+                $_SESSION['completado'] = "registro completado con éxito";
+            }else{
+                $_SESSION['errores']['general']="fallo al guardar usuario";
+            }
         }
     }
     else{
