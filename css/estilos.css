@@ -1,16 +1,49 @@
-body{
-    background-color: cadetblue;
+/* fuentes */
+@font-face {
+    font-family: "fajala";
+    src: url("fuentes/fuente.ttf")format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
-#borde{
+/* estilos generales */
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.clearFix{
+    clear: both;
+    float: none;
+}
+body{
+    font-family: "fajala";
+    background-color: #acdcde;
 
 }
+/*ESTILOS CABECERA*/
+#cabecera{
+    width: 85%;
+    height: auto;
+    background: transparent;
+    margin: 0 auto;
+    border: 1px solid black;
+}
 #logo{
+    float: left;
+    width: 540px;
+    height: 120px;
     border: 1px solid #000000;
 }
 #imglogo{
-    width: 199px;
+    width: 120px;
     border-radius: 60px;
 }
+
+#borde{
+
+}
+
 span.green {
     background: green;
     border-radius: 0.8em;
