@@ -27,19 +27,48 @@ body{
     height: auto;
     background: transparent;
     margin: 0 auto;
-    border: 1px solid black;
 }
 #logo{
     float: left;
     width: 540px;
-    height: 120px;
-    border: 1px solid #000000;
+    height: 130px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 #imglogo{
     width: 120px;
     border-radius: 60px;
 }
-
+/*MENU*/
+#menu{
+    width: 100%;
+    height: 40px;
+    clear: both;
+    background: linear-gradient(to top, #66b5b2 0px, #acdcde 60%);
+    border: 1px solid #66b5b2;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#menu ul{
+    list-style: none;
+}
+#menu ul li{
+    float: left;
+    line-height: 39px;
+    border-right: 1px solid #498c89;
+}
+#menu ul li:hover{
+    background: linear-gradient(to top, #66b5b2 0px, #acdcde 100%);
+}
+#menu ul li a{
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    color: #336764;
+}
+/**/
 #borde{
 
 }

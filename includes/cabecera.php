@@ -42,5 +42,6 @@ require_once 'includes/conexion.php';
                 </li>
             </ul>
         </nav>
+        <div class="clearFix"></div>
     </header>
     <div id="contenidoPrincipal">
