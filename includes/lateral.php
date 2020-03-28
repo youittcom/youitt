@@ -3,16 +3,30 @@ require_once 'includes/helpers.php';
 ?>
 <!-- BARRA LATERAL -->
 <aside id="barraLateral">
-    <div id="login" class="bloque">
-        <h3>Identificate</h3>
-        <form action="login.php" method="post">
-            <label>Email</label>
-            <input type="email" name="email"/>
-            <label>Password</label>
-            <input type="password" name="password"/>
-            <input type="submit" value="Entrar">
-        </form>
-    </div>
+    <?php if(isset($_SESSION['usuario'])):?>
+        <div id="usuario_logeado" class="bloque">
+            <span class="green">&nbsp;</span>
+            <h3><?php echo $_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'];?></h3>
+            <a href="logout.php">Cerrar Sesión</a>
+        </div>
+    <?php endif;?>
+        <div id="login" class="bloque">
+            <h3>Identificate</h3>
+            <?php if(isset($_SESSION['error_login'])):?>
+                <div class="alerta alerta-error">
+                    <h3><?php echo $_SESSION['error_login'];?></h3>
+
+                </div>
+            <?php endif;?>
+            <form action="login.php" method="post">
+                <label>Email</label>
+                <input type="email" name="email"/>
+                <label>Password</label>
+                <input type="password" name="password"/>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+
     <div id="registro" class="bloque">
         <h3>Registro</h3>
         <?php if(isset($_SESSION['completado'])):?>
