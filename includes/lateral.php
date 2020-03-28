@@ -23,6 +23,10 @@ require_once 'includes/helpers.php';
             <div>
                 <?php echo $_SESSION['errores']['general'];?>
             </div>
+        <?php elseif(isset($_SESSION['errores']['registrado'])):?>
+            <div>
+                <?php echo $_SESSION['errores']['registrado'];?>
+            </div>
         <?php endif;?>
         <form action="../registro.php" method="post">
             <label>Nombre</label>
