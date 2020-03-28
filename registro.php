@@ -51,4 +51,12 @@ if(isset($_POST)){
 
 }
 header('Location:index.php');
-
+function buscarUsuarioPorEmail($email,$db){
+    $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+    $guardar = mysqli_query($db,$sql);
+    if($guardar){
+        return true;
+    }else{
+        return false;
+    }
+}

@@ -8,6 +8,8 @@
       <w>bloque</w>
       <w>borrado</w>
       <w>borrar</w>
+      <w>buscamos</w>
+      <w>buscar</w>
       <w>cabecera</w>
       <w>caja</w>
       <w>campo</w>
@@ -22,6 +24,8 @@
       <w>entrar</w>
       <w>errores</w>
       <w>estas</w>
+      <w>este</w>
+      <w>existe</w>
       <w>fallo</w>
       <w>formulario</w>
       <w>gitignore</w>
@@ -38,7 +42,9 @@
       <w>nombre</w>
       <w>pagina</w>
       <w>prueba</w>
+      <w>registrado</w>
       <w>registro</w>
+      <w>regstro</w>
       <w>sesion</w>
       <w>usuario</w>
       <w>usuarios</w>
@@ -49,6 +55,7 @@
       <w>valido</w>
       <w>validos</w>
       <w>youitt</w>
+      <w>éxito</w>
     </words>
   </dictionary>
 </component>
