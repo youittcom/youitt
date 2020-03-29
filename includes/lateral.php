@@ -13,7 +13,7 @@ require_once 'includes/helpers.php';
         <div id="login" class="bloque">
             <h3>Identificate</h3>
             <?php if(isset($_SESSION['error_login'])):?>
-                <div class="alerta alerta-error">
+                <div id="error-login">
                     <h3><?php echo $_SESSION['error_login'];?></h3>
 
                 </div>

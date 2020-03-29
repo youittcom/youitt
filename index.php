@@ -73,7 +73,7 @@ require_once 'includes/lateral.php'?>
                 et..", comes from a line in section 1.10.32.
             </p>
         </article>
-        <div id="varTodas">
+        <div id="verTodas">
             <a href="">Ver Todas</a>
         </div>
     <?php };?>
